@@ -1,0 +1,24 @@
+
+<form *ngIf="!isDeleteMode" [formGroup]="noteForm" (ngSubmit)="sumit()" class="p-3">
+    <h2>{{heading}}</h2>
+    <mat-form-field class="w-100">
+      <mat-label>title</mat-label>
+      <input type="text" matInput formControlName="title" />
+ 
+    </mat-form-field>
+    <mat-form-field class="w-100">
+      <mat-label>desc</mat-label>
+      <input type="text" matInput formControlName="desc"  />
+
+    </mat-form-field>
+    <button [disabled]="noteForm.invalid" mat-stroked-button>submit</button>
+    
+  
+  </form>
+
+  <div class="p-3 text-danger" *ngIf="isDeleteMode">
+    <p>are u sure ??</p>
+    <button mat-stroked-button (click)="deleteNote()">yeas</button>
+  </div>
+
+

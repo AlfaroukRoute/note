@@ -1,0 +1,41 @@
+<form [formGroup]="singupForm" (ngSubmit)="singup()" class="py-3 w-75 mx-auto">
+  <h2 class="mat-headline-4"><span class="text-danger">R</span>egister Form</h2>
+
+  <mat-form-field class="w-100" appearance="fill">
+    <mat-label>firstName</mat-label>
+    <input formControlName="first_name" matInput placeholder="Placeholder" />
+    <mat-icon matSuffix>person_pin</mat-icon>
+    <mat-error>{{firstNameErrorMessage}}</mat-error>
+  </mat-form-field>
+ 
+  <mat-form-field class="w-100" appearance="fill">
+    <mat-label>lastName</mat-label>
+    <input formControlName="last_name" matInput placeholder="" />
+    <mat-icon matSuffix>person_pin</mat-icon>
+    <mat-error>{{lastNameErrorMessage}}</mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="w-100" appearance="fill">
+    <mat-label>email</mat-label>
+    <input formControlName="email" matInput placeholder="" />
+    <mat-icon matSuffix>email</mat-icon>
+    <mat-error>{{emailErrorMessage}}</mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="w-100" appearance="fill">
+    <mat-label>password</mat-label>
+    <input formControlName="password" matInput placeholder="" />
+    <mat-icon matSuffix>password</mat-icon>
+    <mat-error>{{passwordErrorMessage}}</mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="w-100" appearance="fill">
+    <mat-label>age</mat-label>
+    <input type="number" formControlName="age" matInput placeholder="Placeholder" />
+    <mat-icon matSuffix>person</mat-icon>
+    <mat-error>{{ageErrorMessage}}</mat-error>
+  </mat-form-field> 
+
+  <!-- [disabled]="singupForm.invalid" -->
+  <button class="w-100" mat-raised-button [disabled]="singupForm.invalid" color="accent">signup</button>
+</form>

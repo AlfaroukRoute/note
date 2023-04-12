@@ -1,0 +1,17 @@
+<form [formGroup]="loginForm" (ngSubmit)="login()" class="py-3">
+  <h2 class="mat-headline-3"><span class="text-danger">L</span>ogin From </h2>
+  <mat-form-field  class="w-100">
+    <mat-label>email</mat-label>
+    <input type="text" matInput placeholder="" formControlName="email">
+    <mat-icon matPrefix>email</mat-icon>
+    <mat-error>{{emailErrorMsg}}</mat-error>
+  </mat-form-field>
+  <mat-form-field  class="w-100">
+    <mat-label>password</mat-label>
+    <input type="text" matInput placeholder="" formControlName="password">
+    <mat-icon matPrefix>password</mat-icon>
+    <mat-error>{{passwordErrorMsg}}</mat-error>
+  </mat-form-field>
+
+  <button class="w-100" mat-raised-button [disabled]="loginForm.invalid" color="accent">login</button>
+</form>

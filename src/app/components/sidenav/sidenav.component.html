@@ -1,0 +1,24 @@
+<div class="my-3 side--nav">
+  <mat-list role="list">
+    <a *ngIf="isLogin" mat-menu-item routerLink="/home" class="py-2">
+        <mat-icon class="icon--list">home</mat-icon>
+        Home
+    </a>
+
+    
+    <a class="py-2" *ngIf="!isLogin" mat-menu-item routerLink="/login" >
+      <mat-icon class="icon--list">login</mat-icon>
+      login
+    </a>
+    
+    <a class="py-2" *ngIf="!isLogin" mat-menu-item routerLink="/singup" >
+      <mat-icon class="icon--list">login</mat-icon>
+      register
+    </a>
+    
+    <a class="py-2" *ngIf="isLogin" mat-menu-item  (click)="logOut()">
+        <mat-icon class="icon--list">logout</mat-icon>
+        logout
+    </a>
+  </mat-list>
+</div>

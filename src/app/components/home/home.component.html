@@ -1,0 +1,42 @@
+<section>
+  <div class="container py-4">
+    <button (click)="openDialog('0' , '0' , 'add')" class="ms-auto d-block mb-3" mat-raised-button color="primary">
+      add Note
+    </button>
+    <div class="row g-4">
+      <div class="col-md-4" *ngFor="let note of notes;index as i">
+        <mat-card class="example-card overflow-hidden py-3">
+          <button
+            class="d-block ms-auto"
+            mat-icon-button
+            color="basic"
+            aria-label="Example icon-button with a menu"
+            [matMenuTriggerFor]="menu"
+          >
+            <mat-icon>more_vert</mat-icon>
+          </button>
+
+          <mat-menu #menu="matMenu">
+            <!-- (click)="setUpUpdate(note._id)" -->
+            <button mat-menu-item  (click)="openDialog('0' , '0' , 'update' , note)">
+              <mat-icon>update</mat-icon>
+              <span>update</span>
+            </button>
+          
+            <!-- (click)="deleteNote()" -->
+            <button mat-menu-item  (click)="openDialog('0' , '0' , 'delete' , note)" >
+              <mat-icon>delete</mat-icon>
+              <span>delete</span>
+            </button>
+          </mat-menu>
+
+          <mat-card-content>
+            <h2>{{ note.title }}</h2>
+            <mat-divider></mat-divider>
+            <p>{{ note.desc | getWords : 5 }}</p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</section>

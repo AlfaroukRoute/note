@@ -1,0 +1,5 @@
+<mat-toolbar color="primary" class="justify-content-between">
+  <span class="d-flex align-items-center"><mat-icon >event_note</mat-icon>Note</span>
+  <button (click)="emitToggleSideNav()" mat-icon-button><mat-icon>menue</mat-icon></button>
+</mat-toolbar>
+<mat-progress-bar *ngIf="isLoding" color="accent" mode="indeterminate"></mat-progress-bar>
